@@ -1,11 +1,6 @@
 const express = require('express')
 const auth = express.Router();
 
-//Register
-//login
-//logout
-//Getprofile
-
 const {register , login , logout , adminRegister} = require("../Controller/auth");
 const {userMiddleware} = require("../Middleware/userMiddleware");
 const {adminMiddleware} = require("../Middleware/adminMiddleware")
