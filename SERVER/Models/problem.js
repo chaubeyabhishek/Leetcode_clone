@@ -19,7 +19,7 @@ const problemSchema = new mongoose.Schema({
         enum:['array','linkedList','graph','dp'],
         required:true
     },
-    visibleTestCaese:[
+    visibleTestCases:[
         {
             input:{
                 type:String,
@@ -36,7 +36,7 @@ const problemSchema = new mongoose.Schema({
 
         }
     ],
-    hiddenTestCaese:[
+    hiddenTestCases:[
         {
             input:{
                 type:String,
@@ -60,6 +60,18 @@ const problemSchema = new mongoose.Schema({
             }
         }
     ],
+    referenceSolution:[
+        {
+            language:{
+                type:String,
+                required:true,
+            },
+            completeCode:{
+                type:String,
+                required:true
+            }
+        }
+    ],
     problemCreator:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'user',
@@ -68,5 +80,5 @@ const problemSchema = new mongoose.Schema({
 })
 
 const Problem = mongoose.model('problem',problemSchema);
-module.exports = problemSchema;
+module.exports = Problem;
 
